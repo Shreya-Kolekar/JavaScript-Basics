@@ -111,12 +111,24 @@
 // arrays, objects, Functions
 
 
-
+// Symbol data type
 const id = Symbol('123');
 const anotherid = Symbol('123');
 console.log(id);
 console.log(anotherid);
-console.log(id === anotherid);
+console.log(id === anotherid);    // false
+
+
+// Declaration of ref types 
+
+// const heroes = ["Shaktiman", "Naagraj", "Doga"];
+// let myObj = {
+//     name:"Shakuntala",
+//     age:23
+// }
+// const myFunc = function(){
+//     console.log('Hello World');
+// }
 
 
 
