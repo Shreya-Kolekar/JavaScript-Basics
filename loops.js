@@ -1,3 +1,10 @@
+// 1. for loops
+// 2. do-while loops
+// 3. for-of loops (on strings, arrays, maps) (cannot use on objects)
+// 4. for-in loops (on objects, arrays) (cannot use on maps)
+// 5. for-each loops (on objects inside arrays) 
+// 6. for-each loops using ARROW functions and passing any function as argument
+
 // -----------------------------------  for
 
 // for (let i=0; i<= 10;i++) {
