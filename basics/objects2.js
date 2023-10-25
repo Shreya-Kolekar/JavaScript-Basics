@@ -14,9 +14,9 @@ console.log(Instructor);
 // API will handle data in the JSON format.
 // Can use online JSON readers to understand what is the data which is in JSON format
 
-{
-    "name": 'hiteesh',
-    "courseName": "JS in Hindi",
-    "price": "free"
-}
+// {
+//     "name": 'hiteesh',
+//     "courseName": "JS in Hindi",
+//     "price": "free"
+// }
  
