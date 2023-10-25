@@ -1,0 +1,117 @@
+<!--                NOTES                     -->
+
+
+document.getElementById("title")
+>> <h1 id="title".......?
+
+document.getElementById('title').id
+>> 'title'
+
+document.getElementById('title').class
+>> undefined
+
+document.getElementById('title').className
+>> 'heading'
+
+document.getElementById('title').getAttribute('id')
+>> 'title'
+
+document.getElementById('title').setAttribute('class','test')
+>> undefined
+
+
+// Manipulating elements
+
+const title = document.getElementById('title')
+title.style.backgroundColor = 'green'
+>> 'green'
+title.style.padding = "15px"
+>> '15px'
+
+
+// Understanding difference between textContent, innerHTML, innerText
+
+/ ----------------   Shows all the text
+title.textContent
+>> 'DOM Learning on Youtube testing text'
+
+/ ---------------    Shows only the text visible on the webpage
+title.innerText
+>> 'DOM Learning on Youtube'
+
+/ ----------------  Shows the entire element
+title.innerHTML
+>> 'DOM Learning on Youtube'<span style="display: none;">testing text</span>
+
+
+
+/ ----------------    querySelector
+
+Returns the first h1 element
+document.querySelector('h1')
+
+
+/ -----------------  selecting a particular input
+document.querySelector('input[type="password"]') 
+
+
+
+/ ----------------- changing color of unordered list
+
+const myul = document.querySelector('ul')
+myul.querySelector('li')
+const turnGreen = myul.querySelector('li')
+turnGreen.style.backgroundColor = "green"
+
+
+/ --------------------  querySelectorAll
+
+// NodeList and Html collections are NOT pure arrays.
+// Always check their prototype to find out which properties are available to use.
+
+const tempLiList = document.querySelectorAll('li')
+tempLiList
+>> NodeList(3) [li, li, li]
+
+tempLiList.style.color = 'green'
+>> Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+
+tempLiList[0].style.color = 'green'
+>> 'green'
+
+const myH1 = document.querySelector('h1')  // will select all the h1 tags on the page
+myH1
+>> NodeList [h1*title.heading] // returns a NodeList of h1 tags with ID as title and class as heading
+>>myH1.stly.color = 'green'
+>> Uncaught TypeError: Cannot set properties of undefined
+
+myH1[0].stlye.color = 'green'
+>> 'green'
+
+//  Converets all list elements with background green
+tempLiList.forEach( function (l) {
+    l.style.backgroundColor = 'green'
+})
+
+
+// --------------------  Cannot use map/forEach on HTML collection
+
+const tempClassList = document.getElementsByClassName('list-item')
+>> undefined
+tempClassList.forEach(function (l) {
+    console.log(l)
+})
+>> Uncaught TypeError: tempClassList.forEach is not a function
+
+
+// -----------------   So convert it to array using Array.from
+
+const tempClassList = document.getElementsByClassName('list-item')
+>> undefined
+Array.from(tempClassList)
+>>  [l.list-item, li.list-item, li.list-item, li.list-item]
+
+myConvertedArr.forEach(function (li) {
+    li.style.color = 'orange'
+} )
+>> undefined // converted all list elements in orange text
