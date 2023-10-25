@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // ------------------ Method 1 : create a function to add language names in list: 
+    // start by creating a 'li' then add text to the 'li' and lastly append this
+    // 'li' to the main list 'ul'
+
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+
+    // ------------------ Method 2 : Optimized way to add language names to list
+    // Here we don't need to trverse entire tree and can directly create a text node
+    function addLanguageOpti(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguageOpti('golang');
+
+
+    // ------------------- Editing these values
+    // ex: replace second list item "python" with "Mojo"
+    const secondLang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement('li');
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli)
+
+    // ------------------- Another method for editing values
+
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>TypeScript</li>';
+
+    // --------------------- Remove values
+
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove()
+
+</script>
+</html>
