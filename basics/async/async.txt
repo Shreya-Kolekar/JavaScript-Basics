@@ -1,0 +1,18 @@
+--------------  Default JS ------------------
+
+1. JavaScript is synchronous
+2. Single threaded
+
+--------------  Execution Context ---------------
+
+1. Executes one line at a time
+2. Call stack and Memory Heap
+
+----------  Blocking Code and Non-Blocking Code --------------------
+
+1. Reading files is an example of blocking code.
+
+----------------- fetch ---------------
+
+It also creates call backs will bit higher priority and gives result 
+back whther task was completed or not

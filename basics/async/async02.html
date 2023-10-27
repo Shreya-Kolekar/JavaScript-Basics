@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+
+        let intervalID; // declare at start so it can be used in both startBtn & endBtn function too.
+
+        const startBtn = function() {
+            if (!intervalID) {    // sets intervalID only if NULL (covers case of clicking start twice)
+                intervalID = setInterval(startPrint, 1000); // JS starts executing setInterval as soon as it is read.
+            };
+            
+            function startPrint() {
+            console.log('Shreya', Date.now());
+            };
+        };
+
+        const endBtn = function () {
+            clearInterval(intervalID);
+            intervalID = null;
+        };
+
+        document.querySelector('#start').addEventListener('click', startBtn );
+        document.querySelector('#stop').addEventListener('click', endBtn);
+        
+    </script>
+</body>
+</html>
